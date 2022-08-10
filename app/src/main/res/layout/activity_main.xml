@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quiz App!"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@id/main_activity_cardview"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">\
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -52,21 +52,29 @@
                 android:layout_height="wrap_content"
                 android:text="Please enter your name"
                 app:layout_constraintTop_toBottomOf="@id/main_activity_tv_welcome"
-                app:layout_constraintBottom_toTopOf="@id/main_activity_et_name"
+                app:layout_constraintBottom_toTopOf="@id/main_activity_inputlayout_name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-            <EditText
-                android:id="@+id/main_activity_et_name"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/main_activity_inputlayout_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:gravity="center_vertical"
-                android:hint="Name"
                 app:layout_constraintBottom_toTopOf="@id/main_activity_bt_start"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/main_activity_tv_order" />
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_activity_tv_order">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/main_activity_et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name"
+                    android:inputType="textCapWords"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/main_activity_bt_start"
@@ -78,7 +86,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/main_activity_et_name" />
+                app:layout_constraintTop_toBottomOf="@id/main_activity_inputlayout_name" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
